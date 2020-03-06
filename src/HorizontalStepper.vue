@@ -29,7 +29,7 @@
         <div class="content">
             <transition :enter-active-class="enterAnimation" :leave-active-class="leaveAnimation" mode="out-in">
                 <!--If keep alive-->
-                <keep-alive v-if="keepAliveData">
+                <keep-alive v-if="keepAliveData" exclude="StepFour">
                     <component :is="steps[currentStep.index].component" :clickedNext="nextButton[currentStep.name]" @can-continue="proceed" @change-next="changeNextBtnValue" :current-step="currentStep"></component>
                 </keep-alive>
                 <!--If not show component and destroy it in each step change-->
